@@ -1,6 +1,6 @@
 import React from "react";
 
-const Board = () => {
+const BoardComponent = () => {
 	return (
 		<div className='board'>
 			<div className='black cell'></div>
@@ -20,4 +20,4 @@ const Board = () => {
 	);
 };
 
-export default Board;
+export default BoardComponent;
