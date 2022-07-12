@@ -1,7 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
+import Cell from "../models/Cell";
 
-function CellComponent() {
-	return <div className='cell'></div>;
+interface CellProps {
+	cell: Cell;
 }
+
+const CellComponent: FC<CellProps> = ({ cell }) => {
+	return <div className={`cell ${cell.color}`}></div>;
+};
 
 export default CellComponent;

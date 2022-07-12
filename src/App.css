@@ -2,6 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
+body {
+	background: rgb(135, 167, 222);
+}
 .app {
 	width: 100vw;
 	height: 100vh;
