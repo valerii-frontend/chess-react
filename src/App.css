@@ -29,10 +29,14 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+.cell img {
+	width: 90%;
+	height: 90%;
+}
 .black {
-	background: rgb(41, 41, 41);
+	background: rgb(28, 70, 47);
 }
 
 .white {
-	background: rgb(232, 232, 232);
+	background: rgb(205, 216, 194);
 }

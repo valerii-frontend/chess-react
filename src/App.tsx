@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Board from "./models/Board";
 import BoardComponent from "./components/BoardComponent";
-
+// TIME = 29:16 //
 function App() {
 	const [board, setBoard] = useState(new Board());
 
@@ -13,6 +13,7 @@ function App() {
 	function restart() {
 		const newBoard = new Board();
 		newBoard.initCells();
+		newBoard.addFigures();
 		setBoard(newBoard);
 	}
 
