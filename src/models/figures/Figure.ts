@@ -1,4 +1,4 @@
-import logo from "../../assets/black-king.png";
+import logo from "../../assets/black-king.svg";
 import { Colors } from "../Colors";
 import Cell from "../Cell";
 

@@ -33,10 +33,39 @@ body {
 	width: 90%;
 	height: 90%;
 }
+.cursor {
+	cursor: pointer;
+}
 .black {
-	background: rgb(28, 70, 47);
+	background: #0065ac;
 }
 
 .white {
-	background: rgb(205, 216, 194);
+	background: rgb(230, 230, 230);
+}
+
+.selected {
+	box-shadow: inset 0 0 0 2px #333, inset 0 0 0 7px #67ee67, inset 0 0 0 9px #333;
+}
+.selected img {
+	animation: pulse 700ms ease-in-out infinite alternate;
+}
+@keyframes pulse {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.1);
+	}
+}
+
+.available {
+	width: 100%;
+	height: 100%;
+	background-color: #008f0c;
+	opacity: 0.35;
+}
+
+.onAttack {
+	background-color: #8f000080;
 }
