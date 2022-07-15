@@ -11,9 +11,9 @@ const CellComponent: FC<CellProps> = ({ cell, selected, click }) => {
 	const cellStyles = [
 		"cell",
 		cell.color,
-		selected ? "selected" : "",
+		selected && cell.figure ? "selected" : null,
 		cell.figure && cell.available ? "onAttack" : null,
-		cell?.figure ? "cursor" : "",
+		cell?.figure ? "cursor" : null,
 	];
 	return (
 		<div className={cellStyles.join(" ")} onClick={() => click(cell)}>

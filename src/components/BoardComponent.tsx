@@ -24,7 +24,10 @@ const BoardComponent: FC<BoardProps> = ({ board, setBoard }) => {
 		highlightCells();
 	}, [selectedCell]);
 
-	const highlightCells = () => board.highlightCells(selectedCell);
+	const highlightCells = () => {
+		board.highlightCells(selectedCell);
+		updateBoard();
+	};
 
 	const updateBoard = () => {
 		const newBoard = board.getCopyBoard();
