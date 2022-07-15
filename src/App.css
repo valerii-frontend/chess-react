@@ -60,6 +60,10 @@ body {
 }
 
 .available {
+	position: relative;
+}
+.available:after {
+	content: "";
 	width: 100%;
 	height: 100%;
 	background-color: #008f0c;
@@ -67,6 +71,16 @@ body {
 }
 
 .onAttack {
-	background-color: #8f0000;
+	position: relative;
+}
+.onAttack img {
+	position: relative;
+}
+.onAttack::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #ff0000;
 	opacity: 0.35;
 }

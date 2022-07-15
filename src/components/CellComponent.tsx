@@ -14,10 +14,10 @@ const CellComponent: FC<CellProps> = ({ cell, selected, click }) => {
 		selected && cell.figure ? "selected" : null,
 		cell.figure && cell.available ? "onAttack" : null,
 		cell?.figure ? "cursor" : null,
+		!cell.figure && cell.available && "available",
 	];
 	return (
 		<div className={cellStyles.join(" ")} onClick={() => click(cell)}>
-			{!cell.figure && cell.available && <div className='available'></div>}
 			{cell.figure?.logo && <img src={cell.figure.logo} alt={cell.figure.name} />}
 		</div>
 	);
