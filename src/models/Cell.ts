@@ -19,11 +19,47 @@ export default class Cell {
 		this.available = false;
 		this.id = Math.random();
 	}
+
+	setFigure(figure: Figure) {
+		this.figure = figure;
+		this.figure.cell = this;
+	}
+
 	moveFigure(target: Cell) {
 		if (this.figure && this.figure.canMove(target)) {
 			this.figure.moveFigure(target);
-			target.figure = this.figure;
+			target.setFigure(this.figure);
 			this.figure = null;
 		}
+	}
+
+	isEmpty() {
+		return this.figure === null;
+	}
+
+	isEmptyVertiacal(target: Cell): boolean {
+		if (this.x !== target.x) return false;
+		const min = Math.min(this.y, target.y);
+		const max = Math.max(this.y, target.y);
+		for (let y = min + 1; y < max; y++) {
+			if (!this.board.getCell(this.x, y).isEmpty()) {
+				return false;
+			}
+		}
+		return true;
+	}
+	isEmptyHorizontal(target: Cell): boolean {
+		if (this.y !== target.y) return false;
+		const min = Math.min(this.x, target.x);
+		const max = Math.max(this.x, target.x);
+		for (let x = min + 1; x < max; x++) {
+			if (!this.board.getCell(x, this.y).isEmpty()) {
+				return false;
+			}
+		}
+		return true;
+	}
+	isEmptyDiagonal(target: Cell): boolean {
+		return true;
 	}
 }
