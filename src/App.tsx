@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Board from "./models/Board";
 import BoardComponent from "./components/BoardComponent";
-// TIME = 40:31
-
-// https://youtu.be/mUvYGUYMvKo?t=2431
 
 function App() {
 	const [board, setBoard] = useState(new Board());
