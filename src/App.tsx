@@ -8,7 +8,7 @@ import { Player } from "./models/Player";
 function App() {
 	const [board, setBoard] = useState(new Board());
 
-	const [whitePlayer, setWhitePlayer] = useState(new Player(Colors.BLACK));
+	const [whitePlayer, setWhitePlayer] = useState(new Player(Colors.WHITE));
 	const [blackPlayer, setBlackPlayer] = useState(new Player(Colors.BLACK));
 	const [currentPlayer, setCurrentPlayer] = useState<Player | null>(null);
 

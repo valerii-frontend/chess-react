@@ -41,18 +41,23 @@ const BoardComponent: FC<BoardProps> = ({ board, setBoard, currentPlayer, swapPl
 	};
 
 	return (
-		<div className='board'>
-			{board.cells.map((row, index) => (
-				<Fragment key={index}>
-					{row.map((cell) => (
-						<CellComponent
-							click={onClickHandler}
-							cell={cell}
-							key={cell.id}
-							selected={cell.x === selectedCell?.x && cell.y === selectedCell?.y}></CellComponent>
-					))}
-				</Fragment>
-			))}
+		<div>
+			<h3 className={`${currentPlayer?.color === "black" ? "header-black" : "header-white"} header`}>
+				{currentPlayer?.color === "black" ? "Black" : "White"} <span>to move</span>
+			</h3>
+			<div className='board'>
+				{board.cells.map((row, index) => (
+					<Fragment key={index}>
+						{row.map((cell) => (
+							<CellComponent
+								click={onClickHandler}
+								cell={cell}
+								key={cell.id}
+								selected={cell.x === selectedCell?.x && cell.y === selectedCell?.y}></CellComponent>
+						))}
+					</Fragment>
+				))}
+			</div>
 		</div>
 	);
 };
