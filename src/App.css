@@ -6,16 +6,19 @@ body {
 	background: rgb(135, 167, 222);
 }
 .app {
-	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+.field {
+	display: flex;
 }
 
 .board {
 	width: calc(80px * 8);
 	height: calc(80px * 8);
+	flex: 0 0 calc(80px * 8);
 	border: 2px solid #333;
 	display: flex;
 	flex-wrap: wrap;
@@ -46,11 +49,12 @@ body {
 
 .header {
 	padding: 5px;
-	margin-bottom: 1rem;
 	border: 2px solid;
 	text-align: center;
 	text-transform: uppercase;
 	transition: 0.5s;
+	max-width: calc(80px * 8);
+	margin: 0 auto 1rem;
 }
 .header span {
 	font-weight: normal;
@@ -71,6 +75,33 @@ body {
 	transition: 0.5s;
 }
 
+.lost-figures {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+	text-align: center;
+	padding: 0 1rem;
+}
+.lost-figures h3 {
+	margin-bottom: 0.5rem;
+}
+.lost-figures ul {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+}
+.lost-figures li {
+	flex: 0 0 32px;
+	height: 32px;
+}
+.lost-figures li span {
+	margin-top: 0.25rem;
+	font-style: italic;
+}
+.lost-figures li img {
+	max-width: 32px;
+}
 .selected {
 	box-shadow: inset 0 0 0 2px #333, inset 0 0 0 7px #67ee67, inset 0 0 0 9px #333;
 }

@@ -3,6 +3,7 @@ import Board from "../models/Board";
 import CellComponent from "./CellComponent";
 import Cell from "../models/Cell";
 import { Player } from "../models/Player";
+import LostFigures from "./LostFigures";
 
 interface BoardProps {
 	board: Board;
@@ -45,18 +46,22 @@ const BoardComponent: FC<BoardProps> = ({ board, setBoard, currentPlayer, swapPl
 			<h3 className={`${currentPlayer?.color === "black" ? "header-black" : "header-white"} header`}>
 				{currentPlayer?.color === "black" ? "Black" : "White"} <span>to move</span>
 			</h3>
-			<div className='board'>
-				{board.cells.map((row, index) => (
-					<Fragment key={index}>
-						{row.map((cell) => (
-							<CellComponent
-								click={onClickHandler}
-								cell={cell}
-								key={cell.id}
-								selected={cell.x === selectedCell?.x && cell.y === selectedCell?.y}></CellComponent>
-						))}
-					</Fragment>
-				))}
+			<div className='field'>
+				<LostFigures title='Lost WHITE figures' figures={board.lostWhiteFigures}></LostFigures>
+				<div className='board'>
+					{board.cells.map((row, index) => (
+						<Fragment key={index}>
+							{row.map((cell) => (
+								<CellComponent
+									click={onClickHandler}
+									cell={cell}
+									key={cell.id}
+									selected={cell.x === selectedCell?.x && cell.y === selectedCell?.y}></CellComponent>
+							))}
+						</Fragment>
+					))}
+				</div>
+				<LostFigures title=' Lost BLACK figures' figures={board.lostBlackFigures}></LostFigures>
 			</div>
 		</div>
 	);
